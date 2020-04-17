@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<a href="www.baidu.com"><span id="begin">5</span>秒后跳转</a>
-<script>
-    var t=5;
-    var timer=setInterval(time,1000);
-    var spans=document.getElementById("begin");
-    function time(){
-        t--;
-        spans.innerHTML='<span>'+t+'</span>';
-        if (t==0){
-            clearInterval(timer);
-            return window.location.href='www.baidu.com';
-        }console.log(t);
-    }
-</script>
+<script type="text/javascript"> 
+onload=function(){ <span style="white-space:pre"> </span>//在进入网页的时候加载该方法 
+setTimeout(go, 3000); <span style="white-space:pre"> </span> /*在js中是ms的单位*/ 
+}; 
+function go(){ 
+location.href="http://baidu.com"; 
+} 
+</script> 
+//3秒之后自动执行go方法，直接跳转到index.jsp页面 
