@@ -1,9 +1,26 @@
-<script type="text/javascript"> 
-onload=function(){ <span style="white-space:pre"> </span>//在进入网页的时候加载该方法 
-setTimeout(go, 0); <span style="white-space:pre"> </span> /*在js中是ms的单位*/ 
-}; 
-function go(){ 
-location.href="http://baidu.com"; 
-} 
-</script> 
-请稍等跳转
+<%@ page contentType="text/html;charset=GBK"%>
+<h1>登陆成功，欢迎光临！</h1>
+<span id="time" style="background:red">5</span>秒钟后自动跳转，如果不跳转，请点击下面链接
+
+<script. language="JavaScript1.2" type="text/javascript">
+// Place this in the 'head' section of your page.
+
+function delayURL(url) {
+var delay = document.getElementById("time").innerHTML;//取到id="time"的对象，.innerHTML取到对象的值
+//alert(delay);
+if(delay > 0) {
+   delay--;
+   document.getElementById("time").innerHTML = delay;
+} else {
+   window.top.location.href = url;//跳转到URL
+    }
+    setTimeout("delayURL('" + url + "')", 1000);    //delayURL() 就是每间隔1000毫秒 调用delayURL(url);
+}
+
+</script>
+
+
+<a href="index.jsp">管理界面</a>
+<script. type="text/javascript">
+delayURL("index.jsp"); //index.jsp 是N秒后要跳转的页面
+</script>
