@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="www.baidu.com"><span id="begin">5</span>秒后跳转</a>
+<script>
+    var t=5;
+    var timer=setInterval(time,1000);
+    var spans=document.getElementById("begin");
+    function time(){
+        t--;
+        spans.innerHTML='<span>'+t+'</span>';
+        if (t==0){
+            clearInterval(timer);
+            return window.location.href='www.baidu.com';
+        }console.log(t);
+    }
+</script>
